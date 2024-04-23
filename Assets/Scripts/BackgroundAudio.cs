@@ -11,17 +11,26 @@ public class BackgroundAudio : MonoBehaviour
     [SerializeField]
     private AudioClip music;
     [SerializeField]
+    private AudioClip music2;
+    [SerializeField]
     private AudioClip drive;
-
+    [SerializeField]
+    private int seconds;
+    private int i;
     void Start()
     {
-        //loopAudio(GetComponent<AudioSource>());
+        setLoopAudio(musicSource, music);
+        setLoopAudio(drivingSource, drive);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        i++;
+        if (i / 60 == seconds)
+        {
+            switchMusic(music2);
+        }
     }
     public void setLoopAudio(AudioSource source, AudioClip audio)
     {
@@ -30,8 +39,10 @@ public class BackgroundAudio : MonoBehaviour
         source.Play();
     }
 
-    public void stopMusic()
+    public void switchMusic(AudioClip audio)
     {
-        musicSource.Stop();
+        musicSource.loop = true;
+        musicSource.clip = audio;
+        musicSource.Play();
     }
 }
