@@ -16,7 +16,7 @@ public class AnxietyTest
     [Test]
     public void check_if_anxiety_starts_at_50()
     {
-        Assert.AreEqual(0, anxiety.getAnxiety());
+        Assert.AreEqual(50, anxiety.getAnxiety());
     }
     [Test]
     public void subtracts_anxiety_from_50_from_initial_50()
@@ -28,6 +28,6 @@ public class AnxietyTest
     public void adds_anxiety_to_50_from_initial_50()
     {
         anxiety.changeAnxiety(50);
-        Assert.AreEqual(0, anxiety.getAnxiety());
+        Assert.AreEqual(100, anxiety.getAnxiety());
     }
 }
