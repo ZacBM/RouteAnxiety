@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InteractionEvent : MonoBehaviour
+public abstract class InteractionEvent
 {
     private float anxietyIncrement;
 
@@ -12,9 +12,14 @@ public abstract class InteractionEvent : MonoBehaviour
         this.anxietyIncrement = anxietyIncrement;
     }
 
-    protected virtual void run()
+    public virtual void run()
     {
         Anxiety.incrementAnxiety(anxietyIncrement);
+    }
+
+    public float getAnxietyIncrement()
+    {
+        return anxietyIncrement;
     }
 
     // Start is called before the first frame update
