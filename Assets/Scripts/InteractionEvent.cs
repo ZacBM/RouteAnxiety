@@ -7,7 +7,7 @@ public abstract class InteractionEvent
 {
     private float anxietyIncrement;
 
-    public InteractionEvent(float anxietyIncrement)
+    public InteractionEvent(float anxietyIncrement = 0f)
     {
         this.anxietyIncrement = anxietyIncrement;
     }
