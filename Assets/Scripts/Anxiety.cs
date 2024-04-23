@@ -5,7 +5,6 @@ using UnityEngine;
 public static class Anxiety
 {
     private static float anxiety = 50f;
-    // Start is called before the first frame update
 
     public static void incrementAnxiety(float incrementor)
     {

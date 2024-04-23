@@ -7,7 +7,6 @@ using UnityEngine.TestTools;
 public class AnxietyTest
 {
     [SetUp]
-    // Anxiety class instantiation
     public void SetUp()
     {
         Anxiety.reset();
