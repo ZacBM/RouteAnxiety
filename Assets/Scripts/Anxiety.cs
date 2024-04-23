@@ -4,13 +4,12 @@ using UnityEngine;
 
 public static class Anxiety
 {
-    private static float anxiety = 50f;
+    private const float startingAnxiety = 50f;
+    private static float anxiety = startingAnxiety;
 
     public static void incrementAnxiety(float incrementor)
     {
-        anxiety += incrementor;
-        anxiety = Mathf.Clamp(anxiety, 0f, 100f);
-        
+        setAnxiety(anxiety + incrementor);
     }
 
     public static float getAnxiety()
@@ -25,6 +24,6 @@ public static class Anxiety
 
     public static void reset()
     {
-        anxiety = 50f;
+        anxiety = startingAnxiety;
     }
 }
