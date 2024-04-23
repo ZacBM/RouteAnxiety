@@ -7,9 +7,9 @@ public class Anxiety
     private float anxiety = 50f;
     // Start is called before the first frame update
 
-    public void changeAnxiety(float change)
+    public void incrementAnxiety(float incrementor)
     {
-        anxiety += change;
+        anxiety += incrementor;
         if (anxiety < 0)
         {
             anxiety = 0;
