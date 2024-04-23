@@ -2,30 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Anxiety
+public static class Anxiety
 {
-    private float anxiety = 50f;
+    private static float anxiety = 50f;
     // Start is called before the first frame update
 
-    public void incrementAnxiety(float incrementor)
+    public static void incrementAnxiety(float incrementor)
     {
         anxiety += incrementor;
-        if (anxiety < 0)
-        {
-            anxiety = 0;
-        }
-        else if (anxiety > 100){
-            anxiety = 100;
-        }
+        anxiety = Mathf.Clamp(anxiety, 0f, 100f);
+        
     }
 
-    public float getAnxiety()
+    public static float getAnxiety()
     {
         return anxiety;
     }
     
-    public void setAnxiety(float newAnxiety)
+    public static void setAnxiety(float newAnxiety)
     {
-        anxiety = newAnxiety;
+        anxiety = Mathf.Clamp(newAnxiety, 0f, 100f);
+    }
+
+    public static void reset()
+    {
+        anxiety = 50f;
     }
 }
