@@ -15,7 +15,7 @@ public class BackgroundAudio : MonoBehaviour
 
     void Start()
     {
-        loopAudio(audio);
+        //loopAudio(GetComponent<AudioSource>());
     }
 
     // Update is called once per frame

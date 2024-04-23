@@ -16,7 +16,7 @@ public static class Anxiety
     {
         return anxiety;
     }
-    
+
     public static void setAnxiety(float newAnxiety)
     {
         anxiety = Mathf.Clamp(newAnxiety, 0f, 100f);
