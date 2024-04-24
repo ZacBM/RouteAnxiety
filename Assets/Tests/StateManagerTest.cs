@@ -63,48 +63,37 @@ public class StateManagerTest
         manager.incrementAnxiety(-30);
         Assert.AreEqual(0, manager.getAnxiety());
     }
-    public void check_if_win_condition_works_after_incrementing_twice()
-    {
-        manager.changeAnxiety(49);
-        int increments = 0;
-        while (!manager.won())
-        {
-            increments++;
-            manager.incrementAnxiety(50);
-        }
-        Assert.AreEqual(increments, 2);
-    }
+    [Test]
     public void check_if_lose_condition_works_after_incrementing_twice()
     {
-        int increments = 0;
-        while (!manager.lost())
+        manager.changeAnxiety(49);
+        for (int i = 0; i < 2; i++)
         {
-            increments++;
             manager.incrementAnxiety(50);
         }
-        Assert.AreEqual(increments, 2);
+        Assert.IsTrue(manager.lost());
     }
+    [Test]
     public void check_if_lose_condition_works_after_decrementing_twice()
     {
-        manager.changeAnxiety(-50);
-        int decrements = 0;
-        while (!manager.lost())
+        manager.changeAnxiety(51);
+        for (int i = 0; i < 2; i++)
         {
-            decrements++;
             manager.incrementAnxiety(-50);
         }
-        Assert.AreEqual(decrements, 2);
+        Assert.IsTrue(manager.lost());
     }
+    [Test]
     public void check_if_win_condition_works_after_10_decisions()
     {
-        int decisions = 0;
-        while (!manager.won())
+        manager.changeAnxiety(50);
+        for (int i = 0; i < 10;i++)
         {
             manager.addDecision();
-            decisions++;
         }
-        Assert.AreEqual(decisions, 10);
+        Assert.IsTrue(manager.won());
     }
+    [Test]
     public void check_if_reset_changes_anxiety_to_default()
     {
         manager.resetAnxiety();
