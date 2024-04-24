@@ -67,7 +67,7 @@ public class StateManagerTest
     {
         manager.changeAnxiety(49);
         int increments = 0;
-        while (!won())
+        while (!manager.won())
         {
             increments++;
             manager.incrementAnxiety(50);
@@ -77,7 +77,7 @@ public class StateManagerTest
     public void check_if_lose_condition_works_after_incrementing_twice()
     {
         int increments = 0;
-        while (!lose())
+        while (!manager.lost())
         {
             increments++;
             manager.incrementAnxiety(50);
@@ -88,7 +88,7 @@ public class StateManagerTest
     {
         manager.changeAnxiety(-50);
         int decrements = 0;
-        while (!lose())
+        while (!manager.lost())
         {
             decrements++;
             manager.incrementAnxiety(-50);
@@ -98,9 +98,9 @@ public class StateManagerTest
     public void check_if_win_condition_works_after_10_decisions()
     {
         int decisions = 0;
-        while (!won())
+        while (!manager.won())
         {
-            manageraddDecision();
+            manager.addDecision();
             decisions++;
         }
         Assert.AreEqual(decisions, 10);
