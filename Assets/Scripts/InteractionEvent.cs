@@ -5,32 +5,22 @@ using UnityEngine;
 
 public abstract class InteractionEvent
 {
+    private StateManager stateManager;
     private float anxietyIncrement;
 
-    public InteractionEvent(float anxietyIncrement = 0f)
+    public InteractionEvent(StateManager stateManager, float anxietyIncrement = 0f)
     {
+        this.stateManager = stateManager;
         this.anxietyIncrement = anxietyIncrement;
     }
 
     public virtual void run()
     {
-        Anxiety.incrementAnxiety(anxietyIncrement);
+        stateManager.incrementAnxiety(anxietyIncrement);
     }
 
     public float getAnxietyIncrement()
     {
         return anxietyIncrement;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
