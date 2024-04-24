@@ -10,12 +10,12 @@ public class StateManagerTest
     [SetUp]
     public void SetUp()
     {
-        manager = new StateManager();
+        manager = new StateManager(10);
     }
     [Test]
-    public void check_default_anxiety_equals_0()
+    public void check_starting_anxiety_equals_default_anxiety()
     {
-        Assert.AreEqual(0, manager.getAnxiety());
+        Assert.AreEqual(manager.getDefaultAnxiety(), manager.getAnxiety());
     }
     [Test]
     public void set_anxiety_to_50()
@@ -62,5 +62,52 @@ public class StateManagerTest
         manager.changeAnxiety(20);
         manager.incrementAnxiety(-30);
         Assert.AreEqual(0, manager.getAnxiety());
+    }
+    public void check_if_win_condition_works_after_incrementing_twice()
+    {
+        manager.changeAnxiety(49);
+        int increments = 0;
+        while (!won())
+        {
+            increments++;
+            manager.incrementAnxiety(50);
+        }
+        Assert.AreEqual(increments, 2);
+    }
+    public void check_if_lose_condition_works_after_incrementing_twice()
+    {
+        int increments = 0;
+        while (!lose())
+        {
+            increments++;
+            manager.incrementAnxiety(50);
+        }
+        Assert.AreEqual(increments, 2);
+    }
+    public void check_if_lose_condition_works_after_decrementing_twice()
+    {
+        manager.changeAnxiety(-50);
+        int decrements = 0;
+        while (!lose())
+        {
+            decrements++;
+            manager.incrementAnxiety(-50);
+        }
+        Assert.AreEqual(decrements, 2);
+    }
+    public void check_if_win_condition_works_after_10_decisions()
+    {
+        int decisions = 0;
+        while (!won())
+        {
+            manageraddDecision();
+            decisions++;
+        }
+        Assert.AreEqual(decisions, 10);
+    }
+    public void check_if_reset_changes_anxiety_to_default()
+    {
+        manager.resetAnxiety();
+        Assert.AreEqual(manager.getDefaultAnxiety(), manager.getAnxiety());
     }
 }
