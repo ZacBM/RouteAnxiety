@@ -8,7 +8,7 @@ public class InteractionEventTest
 {
     private class BaseTest: InteractionEvent
     {
-        public BaseTest(float anxietyAmount) : base(anxietyAmount)
+        public BaseTest(float anxietyAmount) : base(new StateManager(), anxietyAmount)
         {
 
         }
