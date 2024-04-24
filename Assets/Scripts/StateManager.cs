@@ -6,10 +6,10 @@ public class StateManager
 {
     private const float defaultAnxiety = 0f;
     private float anxiety = 0f;
-    private readonly uint winningDecisions;
-    private uint decisions;
+    private readonly int winningDecisions;
+    private int decisions;
 
-    public StateManager(uint winningDecisions)
+    public StateManager(int winningDecisions)
     {
         this.winningDecisions = winningDecisions;
     }

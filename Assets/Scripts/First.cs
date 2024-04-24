@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class First : MonoBehaviour
 {
     [SerializeField]
-    private const uint winningDecisions = 50; // default set here
+    private const int winningDecisions = 50; // default set here
 
     private StateManager stateManager;
     
