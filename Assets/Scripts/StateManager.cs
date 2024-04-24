@@ -29,7 +29,7 @@ public class StateManager
         decisions++;
     }
     
-    private void changeAnxiety(float anxiety)
+    public void changeAnxiety(float anxiety)
     {
         this.anxiety = Mathf.Clamp(anxiety, 0f, 100f);
     }
@@ -45,8 +45,18 @@ public class StateManager
         return anxiety;
     }
 
+    public float getDefaultAnxiety()
+    {
+        return defaultAnxiety;
+    }
+
     public void incrementAnxiety(float anxietyIncrement)
     {
         changeAnxiety(getAnxiety() + anxietyIncrement);
+    }
+
+    public void resetAnxiety()
+    {
+        anxiety = defaultAnxiety;
     }
 }
