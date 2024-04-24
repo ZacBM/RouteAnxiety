@@ -11,7 +11,7 @@ public class First : MonoBehaviour
     private StateManager stateManager;
     
 
-    private void Awake()
+    void Start()
     {
         stateManager = new StateManager(winningDecisions);
     }
@@ -19,12 +19,6 @@ public class First : MonoBehaviour
     public StateManager getManager()
     {
         return stateManager;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
