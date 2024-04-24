@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionEventSpawner : MonoBehaviour
+public class InteractionEventSpawner
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+
+
+    public InteractionEventSpawner() { 
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
