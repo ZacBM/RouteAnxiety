@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StateManager
 {
@@ -58,5 +59,10 @@ public class StateManager
     public void resetAnxiety()
     {
         anxiety = defaultAnxiety;
+    }
+    
+    public void winningScreen()
+    {
+        SceneManager.LoadScene("WinScreen");
     }
 }
