@@ -41,6 +41,7 @@ public class BackgroundAudio : MonoBehaviour
 
     public void switchMusic(AudioClip audio)
     {
+
         musicSource.loop = true;
         musicSource.clip = audio;
         musicSource.Play();
