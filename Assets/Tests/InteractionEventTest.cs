@@ -6,9 +6,12 @@ using UnityEngine.TestTools;
 
 public class InteractionEventTest
 {
+    private const int winningDecisions = 50;
+    private static StateManager stateManager = new(winningDecisions);
+
     private class BaseTest: InteractionEvent
     {
-        public BaseTest(float anxietyAmount) : base(new StateManager(), anxietyAmount)
+        public BaseTest(float anxietyAmount) : base(stateManager, anxietyAmount)
         {
 
         }
@@ -32,8 +35,8 @@ public class InteractionEventTest
     [Test]
     public void runChangesAnxiety()
     {
-        float current = Anxiety.getAnxiety();
+        float current = stateManager.getAnxiety();
         test.run();
-        Assert.AreEqual(current + testAmount, Anxiety.getAnxiety());
+        Assert.AreEqual(current + testAmount, stateManager.getAnxiety());
     }
 }
