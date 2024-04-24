@@ -10,6 +10,10 @@ public class BackgroundAudio : MonoBehaviour
     private AudioSource drivingSource;
     [SerializeField]
     private List<AudioClip> tracks;
+    [SerializeField]
+    private float staticVolume = 1f;
+    [SerializeField]
+    private int testTime = 10;
     private System.Random random = new System.Random();
     private int index;
     private int i;
@@ -20,16 +24,14 @@ public class BackgroundAudio : MonoBehaviour
         index = random.Next(2, tracks.Count);
         setLoopAudio(musicSource, tracks[index]);
         setLoopAudio(drivingSource, tracks[1]);
-        musicVolume = .2f;
-        musicSource.volume = musicVolume;
-        drivingSource.volume = .75f;
+        musicVolume = musicSource.volume;
     }
 
     // Update is called once per frame
     void Update()
     {
         i++;
-        if (i / 60 == 7)
+        if (i / 60 == testTime)
         {
             switchMusic();
             i = 0;
@@ -52,7 +54,7 @@ public class BackgroundAudio : MonoBehaviour
         }
         index = newSong;
 
-        musicSource.volume = 1f;
+        musicSource.volume = staticVolume;
         musicSource.loop = false;
         musicSource.clip = tracks[0];
         musicSource.Play();
