@@ -9,22 +9,18 @@ public class First : MonoBehaviour
     private const int winningDecisions = 50; // default set here
 
     private StateManager stateManager;
-    
+    private InteractionEventSpawner interactionEventSpawner;
 
-    private void Awake()
+    void Start()
     {
         stateManager = new StateManager(winningDecisions);
+        interactionEventSpawner = new InteractionEventSpawner();
+        interactionEventSpawner.addInteractionEvent(new ChangeMusic(stateManager, 2f)); // HARD CODED 2f for now
     }
     
     public StateManager getManager()
     {
         return stateManager;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame

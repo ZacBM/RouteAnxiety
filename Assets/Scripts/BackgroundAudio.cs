@@ -9,29 +9,35 @@ public class BackgroundAudio : MonoBehaviour
     [SerializeField]
     private AudioSource drivingSource;
     [SerializeField]
-    private AudioClip music;
+    private List<AudioClip> tracks;
     [SerializeField]
-    private AudioClip music2;
+    private float staticVolume = 1f;
     [SerializeField]
-    private AudioClip drive;
-    [SerializeField]
-    private int seconds;
+    private int testTime = 10;
+    private System.Random random = new System.Random();
+    private int index;
     private int i;
+    private float musicVolume;
+
     void Start()
     {
-        setLoopAudio(musicSource, music);
-        setLoopAudio(drivingSource, drive);
+        index = random.Next(2, tracks.Count);
+        setLoopAudio(musicSource, tracks[index]);
+        setLoopAudio(drivingSource, tracks[1]);
+        musicVolume = musicSource.volume;
     }
 
     // Update is called once per frame
     void Update()
     {
         i++;
-        if (i / 60 == seconds)
+        if (i / 60 == testTime)
         {
-            switchMusic(music2);
+            switchMusic();
+            i = 0;
         }
     }
+
     public void setLoopAudio(AudioSource source, AudioClip audio)
     {
         source.loop = true;
@@ -39,11 +45,29 @@ public class BackgroundAudio : MonoBehaviour
         source.Play();
     }
 
-    public void switchMusic(AudioClip audio)
+    public void switchMusic()
     {
+        int newSong = random.Next(2, tracks.Count);
+        while (newSong == index)
+        {
+            newSong = random.Next(2, tracks.Count);
+        }
+        index = newSong;
 
+        musicSource.volume = staticVolume;
+        musicSource.loop = false;
+        musicSource.clip = tracks[0];
+        musicSource.Play();
+
+        StartCoroutine(PlayNextTrack());
+    }
+
+    IEnumerator PlayNextTrack()
+    {
+        yield return new WaitForSeconds(musicSource.clip.length);
+        musicSource.volume = musicVolume;
         musicSource.loop = true;
-        musicSource.clip = audio;
+        musicSource.clip = tracks[index];
         musicSource.Play();
     }
 }
