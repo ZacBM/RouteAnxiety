@@ -12,6 +12,14 @@ public class First : MonoBehaviour
     [SerializeField]
     private const int winningDecisions = 50; // default set here
 
+    [SerializeField]
+    private int speed = 10;
+    [SerializeField]
+    private List<GameObject> roadPieces;
+    [SerializeField]
+    private int length = 20;
+
+    private InfiniteRoad road;
     private StateManager stateManager;
     private InteractionEventSpawner interactionEventSpawner;
 
@@ -23,6 +31,8 @@ public class First : MonoBehaviour
         interactionEventSpawner.addInteractionEvent(new ChangeLane(stateManager, 2f)); // HARD CODED 2f for now
         interactionEventSpawner.addInteractionEvent(new SpeedChange(stateManager, 2f)); // HARD CODED 2f for now
         interactionEventSpawner.addInteractionEvent(new WindowChange(stateManager, 2f)); // HARD CODED 2f for now
+        road = new InfiniteRoad(speed, roadPieces, length);
+        road.Start();
     }
 
     public StateManager getManager()
@@ -47,5 +57,6 @@ public class First : MonoBehaviour
         {
             timeCount += now;
         }
+        road.Update();
     }
 }

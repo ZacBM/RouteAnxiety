@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class InfiniteRoad
 {
-    [SerializeField]
     private int speed;
-    [SerializeField]
     private List<GameObject> roads;
-    [SerializeField]
     private int objectLength;
 
     private float index;
 
+    public InfiniteRoad(int speed, List<GameObject> roads, int objectLength)
+    {
+        this.speed = speed;
+        this.roads = roads;
+        this.objectLength = objectLength;
+    }
+
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         int objectCount = roads.Count;
         index = (float)(objectCount) / 2 - (objectCount);
@@ -29,7 +33,7 @@ public class InfiniteRoad
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         foreach (GameObject road in roads)
         {
@@ -41,5 +45,15 @@ public class InfiniteRoad
             }
             road.transform.position = newRoadPosition;
         }
+    }
+
+    public void setSpeed(int speed)
+    {
+        this.speed = speed;
+    }
+
+    public int getSpeed()
+    {
+        return speed;
     }
 }
