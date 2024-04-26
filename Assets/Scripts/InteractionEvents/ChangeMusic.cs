@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ChangeMusic: InteractionEvent
 {
-    public ChangeMusic(StateManager stateManager, float anxietyAmount): base(stateManager, anxietyAmount)
+    private const float defaultAnxietyAmount = 2f;
+
+    public ChangeMusic(StateManager stateManager, float anxietyAmount = defaultAnxietyAmount): base(stateManager, anxietyAmount)
     {
         
     }
