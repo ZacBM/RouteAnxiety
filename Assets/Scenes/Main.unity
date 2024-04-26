@@ -1025,6 +1025,7 @@ MonoBehaviour:
   windowUp: 1
   whichLane: 1
   goFast: 0
+  GameStartupScript: {fileID: 0}
 --- !u!114 &739090960
 MonoBehaviour:
   m_ObjectHideFlags: 0
