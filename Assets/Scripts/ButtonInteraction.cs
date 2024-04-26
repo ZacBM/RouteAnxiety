@@ -33,7 +33,7 @@ public class ButtonInteraction : MonoBehaviour
 
     public void SpeedChange ()
     {
-
+        speedChange.run();
         if (goFast == true)
         {
             Debug.Log("Go Slow!");
@@ -48,6 +48,7 @@ public class ButtonInteraction : MonoBehaviour
 
     public void WindowChange()
     {
+        windowChange.run();
         if (windowUp == true)
         {
             Debug.Log("Window Down");
@@ -62,6 +63,7 @@ public class ButtonInteraction : MonoBehaviour
 
     public void ChangeLanes()
     {
+        changeLane.run();
         Debug.Log("No Turn Signal");
     }
 }
