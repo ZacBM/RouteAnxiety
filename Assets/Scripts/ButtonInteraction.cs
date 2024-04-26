@@ -11,12 +11,13 @@ public class ButtonInteraction : MonoBehaviour
     [SerializeField]
     private First GameStartupScript;
     private StateManager stateManager;
-    public ChangeMusic changeMusic;
+    private ChangeMusic changeMusic;
 
     public void Start()
     { 
         stateManager = GameStartupScript.getManager();
         changeMusic = new ChangeMusic(stateManager);
+
     }
 
     public void MusicChange()
@@ -27,6 +28,7 @@ public class ButtonInteraction : MonoBehaviour
 
     public void SpeedChange ()
     {
+
         if (goFast == true)
         {
             Debug.Log("Go Slow!");
