@@ -12,12 +12,17 @@ public class ButtonInteraction : MonoBehaviour
     private First GameStartupScript;
     private StateManager stateManager;
     private ChangeMusic changeMusic;
+    private WindowChange windowChange;
+    private ChangeLane changeLane;
+    private SpeedChange speedChange;
 
     public void Start()
     { 
         stateManager = GameStartupScript.getManager();
         changeMusic = new ChangeMusic(stateManager);
-
+        windowChange = new WindowChange(stateManager);
+        changeLane = new ChangeLane(stateManager);
+        speedChange = new SpeedChange(stateManager);
     }
 
     public void MusicChange()
