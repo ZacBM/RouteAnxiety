@@ -8,9 +8,20 @@ public class ButtonInteraction : MonoBehaviour
     public int whichLane = 1;
     public bool goFast = false;
 
+    [SerializeField]
+    private First GameStartupScript;
+    private StateManager stateManager;
+    public ChangeMusic changeMusic;
+
+    public void Start()
+    { 
+        stateManager = GameStartupScript.getManager();
+        changeMusic = new ChangeMusic(stateManager);
+    }
 
     public void MusicChange()
     {
+        changeMusic.run();
         Debug.Log("Music Changed");
     }
 
