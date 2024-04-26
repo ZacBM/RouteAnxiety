@@ -23,6 +23,11 @@ public class First : MonoBehaviour
         return stateManager;
     }
 
+    public InteractionEventSpawner getInteractionEventSpawner()
+    {
+        return interactionEventSpawner;
+    }
+
     // Update is called once per frame
     void Update()
     {
