@@ -1025,7 +1025,7 @@ MonoBehaviour:
   windowUp: 1
   whichLane: 1
   goFast: 0
-  GameStartupScript: {fileID: 0}
+  GameStartupScript: {fileID: 1007570389}
 --- !u!114 &739090960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,6 +1462,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371ed64a6ea0bac4785a8f61709a85ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsUntilSpawn: 2
+  speed: 10
+  roadPieces: []
+  length: 20
 --- !u!4 &1007570390
 Transform:
   m_ObjectHideFlags: 0
