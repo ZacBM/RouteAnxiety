@@ -20,12 +20,11 @@ public class First : MonoBehaviour
     private int length = 20;
 
     private InfiniteRoad road;
-    private StateManager stateManager;
+    private StateManager stateManager = new StateManager(winningDecisions); // instantiate early before Start() runs
     private InteractionEventSpawner interactionEventSpawner;
 
     void Start()
     {
-        stateManager = new StateManager(winningDecisions);
         interactionEventSpawner = new InteractionEventSpawner();
         interactionEventSpawner.addInteractionEvent(new ChangeMusic(stateManager, 2f)); // HARD CODED 2f for now
         interactionEventSpawner.addInteractionEvent(new ChangeLane(stateManager, 2f)); // HARD CODED 2f for now
