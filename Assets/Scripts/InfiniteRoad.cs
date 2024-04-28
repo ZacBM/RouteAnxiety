@@ -21,15 +21,15 @@ public class InfiniteRoad
     public void Start()
     {
         int objectCount = roads.Count;
-        index = (float)(objectCount) / 2 - (objectCount);
+        index = -1;
         foreach (GameObject road in roads)
         {
             Vector3 newRoadPosition = road.transform.position;
-            newRoadPosition.z = index * objectLength/2;
+            newRoadPosition.z = index * objectLength / 2;
             road.transform.position = newRoadPosition;
             index += 1;
         }
-        index = (float)(objectCount) / 2 - (objectCount);
+        index = -1;
     }
 
     // Update is called once per frame
@@ -39,9 +39,9 @@ public class InfiniteRoad
         {
             Vector3 newRoadPosition = road.transform.position;
             newRoadPosition.z -= speed * Time.deltaTime;
-            if (newRoadPosition.z < (float)index * (objectLength*.5))
+            if (newRoadPosition.z < -1 * (objectLength * .5))
             {
-                newRoadPosition.z += objectLength * roads.Count / 2;
+                newRoadPosition.z += objectLength * (roads.Count / 2);
             }
             road.transform.position = newRoadPosition;
         }
@@ -57,3 +57,4 @@ public class InfiniteRoad
         return speed;
     }
 }
+
