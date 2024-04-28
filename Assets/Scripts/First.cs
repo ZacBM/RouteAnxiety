@@ -25,7 +25,7 @@ public class First : MonoBehaviour
     private ButtonInteraction buttonInteraction;
 
     private InfiniteRoad road;
-    private StateManager stateManager = new StateManager(winningDecisions); // instantiate early before Start() runs
+    public StateManager stateManager = new StateManager(winningDecisions); // instantiate early before Start() runs
     private InteractionEventSpawner interactionEventSpawner;
 
     void Start()
