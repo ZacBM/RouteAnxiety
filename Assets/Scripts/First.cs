@@ -19,19 +19,30 @@ public class First : MonoBehaviour
     [SerializeField]
     private int length = 20;
 
+    [SerializeField]
+    private CarController carController;
+    [SerializeField]
+    private ButtonInteraction buttonInteraction;
+
     private InfiniteRoad road;
     private StateManager stateManager = new StateManager(winningDecisions); // instantiate early before Start() runs
     private InteractionEventSpawner interactionEventSpawner;
 
     void Start()
     {
-        interactionEventSpawner = new InteractionEventSpawner();
-        interactionEventSpawner.addInteractionEvent(new ChangeMusic(stateManager, 2f)); // HARD CODED 2f for now
-        interactionEventSpawner.addInteractionEvent(new ChangeLane(stateManager, 2f)); // HARD CODED 2f for now
-        interactionEventSpawner.addInteractionEvent(new SpeedChange(stateManager, 2f)); // HARD CODED 2f for now
-        interactionEventSpawner.addInteractionEvent(new WindowChange(stateManager, 2f)); // HARD CODED 2f for now
         road = new InfiniteRoad(speed, roadPieces, length);
         road.Start();
+        interactionEventSpawner = new InteractionEventSpawner(); // ALL HARD CODED 2f for now
+        ChangeMusic changeMusic = new ChangeMusic(stateManager, 2f);
+        ChangeLane changeLane = new ChangeLane(stateManager, carController, 2f);
+        SpeedChange speedChange = new SpeedChange(stateManager, road, 2f);
+        WindowChange windowChange = new WindowChange(stateManager, 2f);
+        interactionEventSpawner.addInteractionEvent(changeMusic);
+        interactionEventSpawner.addInteractionEvent(changeLane);
+        interactionEventSpawner.addInteractionEvent(speedChange);
+        interactionEventSpawner.addInteractionEvent(windowChange);
+        buttonInteraction.InitManager(stateManager);
+        buttonInteraction.Init(changeMusic, windowChange, changeLane, speedChange);
     }
 
     public StateManager getManager()
