@@ -8,21 +8,29 @@ public class ButtonInteraction : MonoBehaviour
     public int whichLane = 1;
     public bool goFast = false;
 
-    [SerializeField]
-    private First GameStartupScript;
     private StateManager stateManager;
     private ChangeMusic changeMusic;
     private WindowChange windowChange;
     private ChangeLane changeLane;
     private SpeedChange speedChange;
 
+    public void InitManager(StateManager stateManager)
+    {
+        this.stateManager = stateManager;
+    }
+
+    public void Init(ChangeMusic changeMusic, WindowChange windowChange, ChangeLane changeLane, SpeedChange speedChange)
+    {
+        this.changeMusic = changeMusic;
+        this.windowChange = windowChange;
+        this.changeLane = changeLane;
+        this.speedChange = speedChange;
+        // not very pretty arguments but it will have to do for now
+    }
+
     public void Start()
     { 
-        stateManager = GameStartupScript.getManager();
-        changeMusic = new ChangeMusic(stateManager);
-        windowChange = new WindowChange(stateManager);
-        changeLane = new ChangeLane(stateManager);
-        speedChange = new SpeedChange(stateManager);
+        
     }
 
     public void MusicChange()
@@ -33,6 +41,7 @@ public class ButtonInteraction : MonoBehaviour
 
     public void SpeedChange ()
     {
+        //ChangeLanes();
         speedChange.run();
         if (goFast == true)
         {
