@@ -10,7 +10,7 @@ public class First : MonoBehaviour
     private float timeCount;
 
     [SerializeField]
-    private const int winningDecisions = 50; // default set here
+    private int winningDecisions = 10; // default set here
 
     [SerializeField]
     private int speed = 70;
