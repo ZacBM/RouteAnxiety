@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StateManager
 {
-    private const float defaultAnxiety = 0f;
+    private const float defaultAnxiety =50f;
     private float anxiety = 50f;
     private readonly int winningDecisions;
     private int decisions;
@@ -72,7 +72,7 @@ public class StateManager
         else if (lost())
         {
             resetAnxiety();
-            changeAnxiety(0);
+            decisions = 0;
         }
     }
 }
