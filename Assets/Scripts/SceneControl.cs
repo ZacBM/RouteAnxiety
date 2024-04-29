@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public static class SceneControl
 {
+    // CHANGE THE STRINGS if scene names change !!!
     public static void switchToWin()
     {
         SceneManager.LoadScene("WinScreen");
