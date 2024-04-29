@@ -49,9 +49,11 @@ public class BackgroundAudio
         musicSource.loop = false;
         musicSource.clip = tracks[0];
         musicSource.Play();
-
-        await Task.Delay((int)(musicSource.clip.length * 1000)); 
-        PlayNextTrack();
+        await Task.Delay((int)(musicSource.clip.length * 1000));
+        if (musicSource != null)
+        {
+            PlayNextTrack();
+        }
     }
 
     public void PlayNextTrack()

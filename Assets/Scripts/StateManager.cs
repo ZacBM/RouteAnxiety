@@ -63,6 +63,16 @@ public class StateManager
     
     public void winningScreen()
     {
-        SceneManager.LoadScene("WinScreen");
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        Debug.Log(decisions);
+        if (won())
+        {
+            SceneManager.LoadScene("WinScreen");
+        }
+        else if (lost())
+        {
+            resetAnxiety();
+            changeAnxiety(0);
+        }
     }
 }
