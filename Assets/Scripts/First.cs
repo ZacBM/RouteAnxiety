@@ -9,8 +9,7 @@ public class First : MonoBehaviour
     private float secondsUntilSpawn = 2f;
     private float timeCount;
 
-    [SerializeField]
-    private int winningDecisions = 10; // default set here
+    private const int winningDecisions = 10; // default set here
 
     [SerializeField]
     private int speed = 70;
