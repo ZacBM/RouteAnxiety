@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpeedChange: InteractionEvent
 {
-    private const float defaultAnxietyAmount = 10f;
-    private int[] speedList = new int[2];
+    private const float defaultAnxietyAmount = 2f;
+    private int[] speedList = new int[3];
     private int currentIndex = 0;
     private InfiniteRoad road;
 
@@ -21,8 +21,9 @@ public class SpeedChange: InteractionEvent
     public SpeedChange(StateManager stateManager, InfiniteRoad road, float anxietyAmount = defaultAnxietyAmount): base(stateManager, anxietyAmount)
     {
         this.road = road;
-        this.speedList[0] = road.getSpeed(); // tries to use serialized speed
-        this.speedList[1] = road.getSpeed() + 100; // adds 100 to it (arbritrary)
+        this.speedList[0] = road.getSpeed() - 30;
+        this.speedList[1] = road.getSpeed();
+        this.speedList[2] = road.getSpeed() + 30;
     }
 
     public override void run()

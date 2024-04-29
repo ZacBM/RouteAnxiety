@@ -47,9 +47,9 @@ public class First : MonoBehaviour
         audio.Start();
 
         interactionEventSpawner = new InteractionEventSpawner(); // ALL HARD CODED 2f for now
-        ChangeMusic changeMusic = new ChangeMusic(stateManager, audio, 2f);
-        ChangeLane changeLane = new ChangeLane(stateManager, carController, 2f);
-        SpeedChange speedChange = new SpeedChange(stateManager, road, 2f);
+        ChangeMusic changeMusic = new ChangeMusic(stateManager, audio, -10f);
+        ChangeLane changeLane = new ChangeLane(stateManager, carController, 10f);
+        SpeedChange speedChange = new SpeedChange(stateManager, road, 10f);
         WindowChange windowChange = new WindowChange(stateManager, 2f);
         interactionEventSpawner.addInteractionEvent(changeMusic);
         interactionEventSpawner.addInteractionEvent(changeLane);
