@@ -33,7 +33,7 @@ public class First : MonoBehaviour
     [SerializeField]
     private float staticVolume = 1f;
 
-    private BackgroundAudio audio;
+    private new BackgroundAudio audio;
     private InfiniteRoad road;
     public StateManager stateManager = new StateManager(winningDecisions); // instantiate early before Start() runs
     private InteractionEventSpawner interactionEventSpawner;
