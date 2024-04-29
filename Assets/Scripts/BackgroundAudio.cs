@@ -1,51 +1,42 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
-public class BackgroundAudio : MonoBehaviour
+public class BackgroundAudio
 {
-    [SerializeField]
     private AudioSource musicSource;
-    [SerializeField]
     private AudioSource drivingSource;
-    [SerializeField]
     private List<AudioClip> tracks;
-    [SerializeField]
     private float staticVolume = 1f;
-    [SerializeField]
-    private int testTime = 10;
     private System.Random random = new System.Random();
     private int index;
-    private int i;
     private float musicVolume;
 
-    void Start()
+    public BackgroundAudio(AudioSource musicSource, AudioSource drivingSource, List<AudioClip> tracks, float staticVolume)
+    {
+        this.musicSource = musicSource;
+        this.drivingSource = drivingSource;
+        this.tracks = tracks;
+        this.staticVolume = staticVolume;
+    }
+
+    public void Start()
     {
         index = random.Next(2, tracks.Count);
-        setLoopAudio(musicSource, tracks[index]);
-        setLoopAudio(drivingSource, tracks[1]);
+        SetLoopAudio(musicSource, tracks[index]);
+        SetLoopAudio(drivingSource, tracks[1]);
         musicVolume = musicSource.volume;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        i++;
-        if (i / 60 == testTime)
-        {
-            switchMusic();
-            i = 0;
-        }
-    }
-
-    public void setLoopAudio(AudioSource source, AudioClip audio)
+    public void SetLoopAudio(AudioSource source, AudioClip audio)
     {
         source.loop = true;
         source.clip = audio;
         source.Play();
     }
 
-    public void switchMusic()
+    public async void SwitchMusic()
     {
         int newSong = random.Next(2, tracks.Count);
         while (newSong == index)
@@ -59,12 +50,12 @@ public class BackgroundAudio : MonoBehaviour
         musicSource.clip = tracks[0];
         musicSource.Play();
 
-        StartCoroutine(PlayNextTrack());
+        await Task.Delay((int)(musicSource.clip.length * 1000)); 
+        PlayNextTrack();
     }
 
-    IEnumerator PlayNextTrack()
+    public void PlayNextTrack()
     {
-        yield return new WaitForSeconds(musicSource.clip.length);
         musicSource.volume = musicVolume;
         musicSource.loop = true;
         musicSource.clip = tracks[index];

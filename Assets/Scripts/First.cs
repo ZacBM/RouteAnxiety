@@ -13,17 +13,27 @@ public class First : MonoBehaviour
     private const int winningDecisions = 50; // default set here
 
     [SerializeField]
-    private int speed = 10;
+    private int speed = 70;
     [SerializeField]
     private List<GameObject> roadPieces;
     [SerializeField]
-    private int length = 20;
+    private int length = 95;
 
     [SerializeField]
     private CarController carController;
     [SerializeField]
     private ButtonInteraction buttonInteraction;
 
+    [SerializeField]
+    private AudioSource musicSource;
+    [SerializeField]
+    private AudioSource drivingSource;
+    [SerializeField]
+    private List<AudioClip> tracks;
+    [SerializeField]
+    private float staticVolume = 1f;
+
+    private BackgroundAudio audio;
     private InfiniteRoad road;
     public StateManager stateManager = new StateManager(winningDecisions); // instantiate early before Start() runs
     private InteractionEventSpawner interactionEventSpawner;
@@ -32,8 +42,12 @@ public class First : MonoBehaviour
     {
         road = new InfiniteRoad(speed, roadPieces, length);
         road.Start();
+
+        audio = new BackgroundAudio(musicSource, drivingSource, tracks, staticVolume);
+        audio.Start();
+
         interactionEventSpawner = new InteractionEventSpawner(); // ALL HARD CODED 2f for now
-        ChangeMusic changeMusic = new ChangeMusic(stateManager, 2f);
+        ChangeMusic changeMusic = new ChangeMusic(stateManager, audio, 2f);
         ChangeLane changeLane = new ChangeLane(stateManager, carController, 2f);
         SpeedChange speedChange = new SpeedChange(stateManager, road, 2f);
         WindowChange windowChange = new WindowChange(stateManager, 2f);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0010504518, g: 0.0011305896, b: 0.0015087844, a: 1}
+  m_IndirectSpecularColor: {r: 0.0010491365, g: 0.0011292086, b: 0.0015076166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -905,70 +905,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d7e24b33b5dee7499b1aa2241e28b4a, type: 3}
---- !u!1 &463084901
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 463084903}
-  - component: {fileID: 463084902}
-  m_Layer: 0
-  m_Name: MusicTester
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &463084902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463084901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea4b6f2fcbbeb5b4a84353ad900d5ed8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSource: {fileID: 1329275428}
-  drivingSource: {fileID: 1760288604}
-  tracks:
-  - {fileID: 8300000, guid: 323dbeb8b3f338f44a99e1535769ae0c, type: 3}
-  - {fileID: 8300000, guid: 8f0149a546c4d5642aaed5bec36c20d0, type: 3}
-  - {fileID: 8300000, guid: 036e28e449e84de4aabc93938c98a107, type: 3}
-  - {fileID: 8300000, guid: acf396fccd6e16045aecb3593c1b498e, type: 3}
-  - {fileID: 8300000, guid: 1ea89a7e82e88d44ca0871ff199f135a, type: 3}
-  - {fileID: 8300000, guid: 63661daa8acd6f64b83317e3dd4b0dbd, type: 3}
-  - {fileID: 8300000, guid: 379acdd32b7da1f449aab742879f1d38, type: 3}
-  - {fileID: 8300000, guid: 036e28e449e84de4aabc93938c98a107, type: 3}
-  - {fileID: 8300000, guid: 61fc66631dd9c7c45a0388d81470ce2c, type: 3}
-  - {fileID: 8300000, guid: 2780761bd537ab24cb62939a0da07db9, type: 3}
-  - {fileID: 8300000, guid: ea500932ac3e9674a98900113400ae86, type: 3}
-  - {fileID: 8300000, guid: 30a94f8b9f1438d45b0dea84248cbb0f, type: 3}
-  - {fileID: 8300000, guid: 1e14d5e9bdd69a94887efb1a6fc0e53a, type: 3}
-  staticVolume: 1
-  testTime: 10
---- !u!4 &463084903
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463084901}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1760288605}
-  - {fileID: 1329275429}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &505281555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1714,7 +1650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsUntilSpawn: 2
-  speed: 10
+  speed: 70
   roadPieces:
   - {fileID: 46082394}
   - {fileID: 754662661}
@@ -1724,9 +1660,26 @@ MonoBehaviour:
   - {fileID: 451643491}
   - {fileID: 2034510865}
   - {fileID: 1802136789}
-  length: 20
+  length: 95
   carController: {fileID: 617703031}
   buttonInteraction: {fileID: 739090959}
+  musicSource: {fileID: 1329275428}
+  drivingSource: {fileID: 1760288604}
+  tracks:
+  - {fileID: 8300000, guid: 323dbeb8b3f338f44a99e1535769ae0c, type: 3}
+  - {fileID: 8300000, guid: 8f0149a546c4d5642aaed5bec36c20d0, type: 3}
+  - {fileID: 8300000, guid: 264510138dd177b49b5c65bfac5676fc, type: 3}
+  - {fileID: 8300000, guid: acf396fccd6e16045aecb3593c1b498e, type: 3}
+  - {fileID: 8300000, guid: 1ea89a7e82e88d44ca0871ff199f135a, type: 3}
+  - {fileID: 8300000, guid: 63661daa8acd6f64b83317e3dd4b0dbd, type: 3}
+  - {fileID: 8300000, guid: 379acdd32b7da1f449aab742879f1d38, type: 3}
+  - {fileID: 8300000, guid: 036e28e449e84de4aabc93938c98a107, type: 3}
+  - {fileID: 8300000, guid: 61fc66631dd9c7c45a0388d81470ce2c, type: 3}
+  - {fileID: 8300000, guid: 2780761bd537ab24cb62939a0da07db9, type: 3}
+  - {fileID: 8300000, guid: ea500932ac3e9674a98900113400ae86, type: 3}
+  - {fileID: 8300000, guid: 30a94f8b9f1438d45b0dea84248cbb0f, type: 3}
+  - {fileID: 8300000, guid: 1e14d5e9bdd69a94887efb1a6fc0e53a, type: 3}
+  staticVolume: 1
 --- !u!4 &1007570390
 Transform:
   m_ObjectHideFlags: 0
@@ -2018,7 +1971,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 463084903}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1522774711 stripped
 GameObject:
@@ -2203,12 +2156,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760288603}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 463084903}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1802136789 stripped
 GameObject:
@@ -2441,5 +2394,6 @@ SceneRoots:
   - {fileID: 319735736}
   - {fileID: 830790084}
   - {fileID: 460493943}
-  - {fileID: 463084903}
+  - {fileID: 1329275429}
+  - {fileID: 1760288605}
   - {fileID: 1007570390}

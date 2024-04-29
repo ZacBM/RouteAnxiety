@@ -4,7 +4,7 @@ using UnityEngine;
 public class ChangeLane : InteractionEvent
 {
     private bool rightLane = false;
-    private const float defaultAnxietyAmount = 2f;
+    private const float defaultAnxietyAmount = 10f;
     private Vector3 firstLane;
     private Vector3 secondLane;
     private CarController carController;

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class StateManager
 {
     private const float defaultAnxiety = 0f;
-    private float anxiety = 0f;
+    private float anxiety = 50f;
     private readonly int winningDecisions;
     private int decisions;
 

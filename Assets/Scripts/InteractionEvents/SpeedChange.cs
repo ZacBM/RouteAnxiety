@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpeedChange: InteractionEvent
 {
-    private const float defaultAnxietyAmount = 2f;
+    private const float defaultAnxietyAmount = 10f;
     private int[] speedList = new int[2];
     private int currentIndex = 0;
     private InfiniteRoad road;

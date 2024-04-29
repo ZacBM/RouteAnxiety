@@ -5,15 +5,16 @@ using UnityEngine;
 public class ChangeMusic: InteractionEvent
 {
     private const float defaultAnxietyAmount = 2f;
+    private BackgroundAudio audio;
 
-    public ChangeMusic(StateManager stateManager, float anxietyAmount = defaultAnxietyAmount): base(stateManager, anxietyAmount)
+    public ChangeMusic(StateManager stateManager, BackgroundAudio audio, float anxietyAmount = defaultAnxietyAmount): base(stateManager, anxietyAmount)
     {
-        
+        this.audio = audio;
     }
 
     public override void run()
     {
         base.run();
-        // do stuff here
+        audio.SwitchMusic();
     }
 }
