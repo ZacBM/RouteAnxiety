@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class SceneControl
+public class SceneControl: MonoBehaviour
 {
     // CHANGE THE STRINGS if scene names change !!!
     public static void switchToWin()
