@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_Henry.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/WinScreen.unity
-    guid: 012fa0d54e4485544ae81fb67eb81222
-  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 27db1ac1393850e4cb31ca51bde50de0
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 012fa0d54e4485544ae81fb67eb81222
   - enabled: 1
     path: Assets/Scenes/LoseScreen.unity
     guid: 0906c711d7a32144aad7696c6a2eb2f6
