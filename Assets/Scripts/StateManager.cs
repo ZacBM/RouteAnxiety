@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StateManager
 {
-    private const float defaultAnxiety =50f;
+    private const float defaultAnxiety = 50f;
     private float anxiety = 50f;
     private readonly int winningDecisions;
     private int decisions;
@@ -60,6 +60,12 @@ public class StateManager
     {
         anxiety = defaultAnxiety;
     }
+
+    public void reset()
+    {
+        resetAnxiety();
+        decisions = 0;
+    }
     
     public void winningScreen()
     {
@@ -67,12 +73,14 @@ public class StateManager
         Debug.Log(decisions);
         if (won())
         {
-            SceneManager.LoadScene("WinScreen");
+            reset();
+            SceneControl.switchToWin();
+            //SceneManager.LoadScene("WinScreen");
         }
         else if (lost())
         {
-            resetAnxiety();
-            decisions = 0;
+            reset();
+            SceneControl.switchToLost();
         }
     }
 }
