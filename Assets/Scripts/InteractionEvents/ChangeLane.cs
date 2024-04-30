@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class ChangeLane : InteractionEvent
 {
-    private bool rightLane = false;
+    private bool currentLaneIsLeft = true;
     private const float defaultAnxietyAmount = 2f;
     private Vector3 firstLane;
     private Vector3 secondLane;
@@ -21,7 +21,7 @@ public class ChangeLane : InteractionEvent
     {
         base.run();
         // do stuff here
-        rightLane = !rightLane;
-        carController.lerpCarToPosition(rightLane ? firstLane : secondLane);
+        currentLaneIsLeft = !currentLaneIsLeft;
+        carController.lerpCarToPosition(currentLaneIsLeft ? firstLane : secondLane);
     }
 }
