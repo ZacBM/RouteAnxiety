@@ -81,6 +81,5 @@ public class First : MonoBehaviour
             timeCount += now;
         }
         road.Update();
-        stateManager.winningScreen();
     }
 }
