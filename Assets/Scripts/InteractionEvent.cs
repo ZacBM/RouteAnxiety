@@ -18,6 +18,7 @@ public abstract class InteractionEvent
     public virtual void run()
     {
         stateManager.processDecision(anxietyIncrement);
+        stateManager.switchIfWonOrLost();
     }
 
     public float getAnxietyIncrement()
