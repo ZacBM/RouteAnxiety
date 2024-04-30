@@ -67,15 +67,12 @@ public class StateManager
         decisions = 0;
     }
     
-    public void winningScreen()
+    public void switchIfWonOrLost()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        Debug.Log(decisions);
         if (won())
         {
             reset();
             SceneControl.switchToWin();
-            //SceneManager.LoadScene("WinScreen");
         }
         else if (lost())
         {
