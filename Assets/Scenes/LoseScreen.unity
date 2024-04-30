@@ -274,9 +274,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: fcb0ed644845ef84db80f62b6372e3e3, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 1454228191}
+        m_TargetAssemblyTypeName: SceneControl, ScriptsAssembly
+        m_MethodName: switchToMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -437,12 +437,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1454228186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb0ed644845ef84db80f62b6372e3e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 01c97593000ec9b41b56156701063977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowUp: 1
-  whichLane: 1
-  goFast: 0
 --- !u!1 &1462222067
 GameObject:
   m_ObjectHideFlags: 0
