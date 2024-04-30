@@ -36,23 +36,11 @@ public class ButtonInteraction : MonoBehaviour
     public void MusicChange()
     {
         changeMusic.run();
-        Debug.Log("Music Changed");
     }
 
     public void SpeedChange ()
     {
-        //ChangeLanes();
         speedChange.run();
-        if (goFast == true)
-        {
-            Debug.Log("Go Slow!");
-            goFast = false;
-        }
-        else if (goFast == false)
-        {
-            Debug.Log("Go Fast!");
-            goFast = true;
-        }
     }
 
     public void WindowChange()
@@ -73,6 +61,5 @@ public class ButtonInteraction : MonoBehaviour
     public void ChangeLanes()
     {
         changeLane.run();
-        Debug.Log("No Turn Signal");
     }
 }
