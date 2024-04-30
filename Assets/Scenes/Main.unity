@@ -3028,6 +3028,10 @@ PrefabInstance:
       value: SpeedSign
       objectReference: {fileID: 0}
     - target: {fileID: 6749066076600256037, guid: 5eed1c889f0f1e144926fd89542e13c5, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749066076600256037, guid: 5eed1c889f0f1e144926fd89542e13c5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b105187750fed4e4680e31cb6d870f12, type: 2}
